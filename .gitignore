@@ -1,0 +1,4 @@
+autoagent_test1/data/base/vulnerability_knowledge_base/*.faiss
+autoagent_test1/data/base/vulnerability_knowledge_base/*.pkl
+autoagent_test1/data/base/vulnerability_knowledge_base/*.faiss
+autoagent_test1/data/base/vulnerability_knowledge_base/*.pkl
