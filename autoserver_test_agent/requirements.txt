@@ -1,0 +1,34 @@
+# FastAPI API Server
+fastapi
+uvicorn
+
+# 資料儲存與結構
+pymongo
+python-multipart
+PyYAML
+
+# 檔案與報告
+markdown
+pdfkit
+Jinja2
+
+# 遠端控制與系統操作
+paramiko
+
+# LLM 模擬用：可串接 llama.cpp 或 openai 格式兼容端點
+httpx
+
+# 環境變數與管理
+python-dotenv
+
+langchain
+langchain-community
+langchain-core
+langchainhub
+sentence-transformers
+faiss-cpu
+fastapi
+uvicorn
+pydantic
+numpy<2
+requests

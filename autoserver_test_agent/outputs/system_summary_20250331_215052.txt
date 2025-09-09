@@ -1,0 +1,255 @@
+hostname: st335
+operating system: linux st335 3.13.0-24-generic #46-ubuntu smp thu apr 10 19:11:08 utc 2014 x86_64 x86_64 x86_64 gnu/linux
+os version: none
+kernel version: none
+architecture: none
+cpu usage: 4.2%
+memory usage: 13.27%
+
+running services:
+- init (pid: 1)
+- kthreadd (pid: 2)
+- ksoftirqd/0 (pid: 3)
+- kworker/0:0h (pid: 5)
+- rcu_sched (pid: 7)
+- rcuos/0 (pid: 8)
+- rcuos/1 (pid: 9)
+- rcu_bh (pid: 10)
+- rcuob/0 (pid: 11)
+- rcuob/1 (pid: 12)
+
+startup services:
+- readme
+- acpid
+- apparmor
+- apport
+- atd
+- console-setup
+- cron
+- cryptdisks
+- cryptdisks-early
+- dbus
+
+open ports / network connections:
+- netid local address:port
+- tcp *:11044 *:*
+- tcp *:68 *:*
+- tcp :::8623 :::*
+- tcp *:22 *:*
+- tcp *:25 *:*
+- tcp :::22 :::*
+- tcp :::25 :::*
+
+firewall status:
+n/a
+
+disk partitions:
+n/a
+
+installed software:
+n/a
+
+users and groups:
+users: 
+groups: 
+
+system logs (recent):
+- mar 31 15:36:37 st335 /usr/bin/crontab[16807]: (root) list (nobody)
+- mar 31 15:37:00 st335 dhcpcd[1403]: eth1: renewing lease of 192.168.56.9
+- mar 31 15:37:00 st335 dhcpcd[1403]: eth1: leased 192.168.56.9 for 600 seconds
+- mar 31 15:37:00 st335 dhcpcd[1403]: eth1: no renewal time supplied, assuming 300 seconds
+- mar 31 15:37:00 st335 dhcpcd[1403]: eth1: no rebind time supplied, assuming 525 seconds
+- mar 31 15:37:00 st335 dhcpcd[1403]: eth1: removing route to 169.254.0.0/16 metric 0
+- mar 31 15:37:00 st335 dhcpcd[1403]: eth1: adding ip address 192.168.56.9/24
+- mar 31 15:37:00 st335 dhcpcd[1403]: eth1: adding route to 169.254.0.0/16 metric 0
+- mar 31 15:37:00 st335 dhcpcd.sh: interface eth1 has been configured with old ip=192.168.56.9
+- mar 31 15:37:47 st335 /usr/bin/crontab[32626]: (root) list (nobody)
+
+cve patches:
+n/a
+
+kernel security configs:
+n/a
+
+kernel upgrades:
+n/a
+
+java version:
+n/a
+
+python packages:
+n/a
+
+docker images:
+n/a
+
+lynis report:
+not installed or no permission
+
+chkrootkit report (full):
+- rootdir is `/'
+- checking `amd'...                                           not found
+- checking `basename'...                                      not infected
+- checking `biff'...                                          not found
+- checking `chfn'...                                          not infected
+- checking `chsh'...                                          not infected
+- checking `cron'...                                          not infected
+- checking `crontab'...                                       not infected
+- checking `date'...                                          not infected
+- checking `du'...                                            not infected
+- checking `dirname'...                                       not infected
+- checking `echo'...                                          not infected
+- checking `egrep'...                                         not infected
+- checking `env'...                                           not infected
+- checking `find'...                                          not infected
+- checking `fingerd'...                                       not found
+- checking `gpm'...                                           not found
+- checking `grep'...                                          not infected
+- checking `hdparm'...                                        not infected
+- checking `su'...                                            not infected
+- checking `ifconfig'...                                      not infected
+- checking `inetd'...                                         not infected
+- checking `inetdconf'...                                     not found
+- checking `identd'...                                        not found
+- checking `init'...                                          not infected
+- checking `killall'...                                       not infected
+- checking `ldsopreload'...                                   not infected
+- checking `login'...                                         not infected
+- checking `ls'...                                            not infected
+- checking `lsof'...                                          not infected
+- checking `mail'...                                          not found
+- checking `mingetty'...                                      not found
+- checking `netstat'...                                       not infected
+- checking `named'...                                         not found
+- checking `passwd'...                                        not infected
+- checking `pidof'...                                         not infected
+- checking `pop2'...                                          not found
+- checking `pop3'...                                          not found
+- checking `ps'...                                            not infected
+- checking `pstree'...                                        not infected
+- checking `rpcinfo'...                                       not found
+- checking `rlogind'...                                       not found
+- checking `rshd'...                                          not found
+- checking `slogin'...                                        not infected
+- checking `sendmail'...                                      not infected
+- checking `sshd'...                                          not infected
+- checking `syslogd'...                                       not tested
+- checking `tar'...                                           not infected
+- checking `tcpd'...                                          not infected
+- checking `tcpdump'...                                       not infected
+- checking `top'...                                           not infected
+- checking `telnetd'...                                       not found
+- checking `timed'...                                         not found
+- checking `traceroute'...                                    not found
+- checking `vdir'...                                          not infected
+- checking `w'...                                             not infected
+- checking `write'...                                         not infected
+- checking `aliens'...                                        no suspect files
+- searching for sniffer's logs, it may take a while...        nothing found
+- searching for rootkit hidrootkit's default files...         nothing found
+- searching for rootkit t0rn's default files...               nothing found
+- searching for t0rn's v8 defaults...                         nothing found
+- searching for rootkit lion's default files...               nothing found
+- searching for rootkit rsha's default files...               nothing found
+- searching for rootkit rh-sharpe's default files...          nothing found
+- searching for ambient's rootkit (ark) default files and dirs... nothing found
+- searching for suspicious files and dirs, it may take a while... nothing found
+- searching for lpd worm files and dirs...                    nothing found
+- searching for ramen worm files and dirs...                  nothing found
+- searching for maniac files and dirs...                      nothing found
+- searching for rk17 files and dirs...                        nothing found
+- searching for ducoci rootkit...                             nothing found
+- searching for adore worm...                                 nothing found
+- searching for shitc worm...                                 nothing found
+- searching for omega worm...                                 nothing found
+- searching for sadmind/iis worm...                           nothing found
+- searching for monkit...                                     nothing found
+- searching for showtee...                                    nothing found
+- searching for optickit...                                   nothing found
+- searching for t.r.k...                                      nothing found
+- searching for mithra...                                     nothing found
+- searching for loc rootkit...                                nothing found
+- searching for romanian rootkit...                           nothing found
+- searching for suckit rootkit...                             warning: /sbin/init infected
+- searching for volc rootkit...                               nothing found
+- searching for gold2 rootkit...                              nothing found
+- searching for tc2 worm default files and dirs...            nothing found
+- searching for anonoying rootkit default files and dirs...   nothing found
+- searching for zk rootkit default files and dirs...          nothing found
+- searching for shkit rootkit default files and dirs...       nothing found
+- searching for ajakit rootkit default files and dirs...      nothing found
+- searching for zarwt rootkit default files and dirs...       nothing found
+- searching for madalin rootkit default files...              nothing found
+- searching for fu rootkit default files...                   nothing found
+- searching for esrk rootkit default files...                 nothing found
+- searching for rootedoor...                                  nothing found
+- searching for enyelkm rootkit default files...              nothing found
+- searching for common ssh-scanners default files...          nothing found
+- searching for suspect php files...                          nothing found
+- searching for anomalies in shell history files...           nothing found
+- checking `asp'...                                           not infected
+- checking `bindshell'...                                     not infected
+- checking `lkm'...                                           chkproc: nothing detected
+- chkdirs: nothing detected
+- checking `rexedcs'...                                       not found
+- checking `sniffer'...                                       lo: not promisc and no packet sniffer sockets
+- eth0: packet sniffer(/sbin/dhclient[551])
+- eth1: not promisc and no packet sniffer sockets
+- checking `w55808'...                                        not infected
+- checking `wted'...                                          6 deletion(s) between mon mar 31 22:57:50 2025 and mon mar 31 23:01:39 2025
+- checking `scalper'...                                       not infected
+- checking `slapper'...                                       not infected
+- checking `z2'...                                            chklastlog: nothing deleted
+- checking `chkutmp'...                                       chkutmp: nothing deleted
+- checking `osx_rsplug'...                                    not infected
+
+rootkit hunter report (full):
+- 
+- checking the local host...
+- 
+-   performing system boot checks
+-     checking for local host name[ found ]
+-     checking for system startup files[ found ]
+-     checking system startup files for malware[ none found ]
+- 
+-   performing group and account checks
+-     checking for passwd file[ found ]
+-     checking for root equivalent (uid 0) accounts[ none found ]
+-     checking for passwordless accounts[ none found ]
+-     checking for passwd file changes[ none found ]
+-     checking for group file changes[ none found ]
+-     checking root account shell history files[ none found ]
+- 
+-   performing system configuration file checks
+-     checking for ssh configuration file[ found ]
+-     checking if ssh root access is allowed[ warning ]
+-     checking if ssh protocol v1 is allowed[ not allowed ]
+-     checking for running syslog daemon[ found ]
+-     checking for syslog configuration file[ found ]
+-     checking if syslog remote logging is allowed[ not allowed ]
+- 
+-   performing filesystem checks
+-     checking /dev for suspicious file types[ warning ]
+-     checking for hidden files and directories[ warning ]
+- 
+- 
+- system checks summary
+- =====================
+- 
+- file properties checks...
+-     files checked: 134
+-     suspect files: 1
+- 
+- rootkit checks...
+-     rootkits checked : 307
+-     possible rootkits: 0
+- 
+- applications checks...
+-     all checks skipped
+- 
+- the system checks took: 17 seconds
+- 
+- all results have been written to the log file (/var/log/rkhunter.log)
+- 
+- one or more warnings have been found while checking the system.
+- please check the log file (/var/log/rkhunter.log)

@@ -1,0 +1,1325 @@
+[
+  {
+    "hostname": "metasploitable3-ubuntu",
+    "os_version": "Ubuntu 14.04",
+    "kernel_version": null,
+    "architecture": null,
+    "open_ports": [],
+    "running_processes": [],
+    "running_services": [
+      {
+        "pid": 1,
+        "name": "init",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2,
+        "name": "kthreadd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 3,
+        "name": "ksoftirqd/0",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 5,
+        "name": "kworker/0:0H",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 7,
+        "name": "rcu_sched",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 8,
+        "name": "rcuos/0",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 9,
+        "name": "rcuos/1",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 10,
+        "name": "rcu_bh",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 11,
+        "name": "rcuob/0",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 12,
+        "name": "rcuob/1",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 13,
+        "name": "migration/0",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 14,
+        "name": "watchdog/0",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 15,
+        "name": "watchdog/1",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 16,
+        "name": "migration/1",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 17,
+        "name": "ksoftirqd/1",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 19,
+        "name": "kworker/1:0H",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 20,
+        "name": "khelper",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 21,
+        "name": "kdevtmpfs",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 22,
+        "name": "netns",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 23,
+        "name": "writeback",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 24,
+        "name": "kintegrityd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 25,
+        "name": "bioset",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 26,
+        "name": "kworker/u5:0",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 27,
+        "name": "kblockd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 28,
+        "name": "ata_sff",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 29,
+        "name": "khubd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 30,
+        "name": "md",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 31,
+        "name": "devfreq_wq",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 34,
+        "name": "khungtaskd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 35,
+        "name": "kswapd0",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 36,
+        "name": "ksmd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 37,
+        "name": "khugepaged",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 38,
+        "name": "fsnotify_mark",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 39,
+        "name": "ecryptfs-kthrea",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 40,
+        "name": "crypto",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 52,
+        "name": "kthrotld",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 54,
+        "name": "scsi_eh_0",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 55,
+        "name": "scsi_eh_1",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 77,
+        "name": "deferwq",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 78,
+        "name": "charger_manager",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 127,
+        "name": "kdmflush",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 128,
+        "name": "bioset",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 130,
+        "name": "kdmflush",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 131,
+        "name": "bioset",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 188,
+        "name": "kworker/u5:1",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 189,
+        "name": "jbd2/dm-0-8",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 190,
+        "name": "ext4-rsv-conver",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 385,
+        "name": "upstart-udev-br",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 387,
+        "name": "ext4-rsv-conver",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 396,
+        "name": "systemd-udevd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 438,
+        "name": "kpsmoused",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 524,
+        "name": "rpcbind",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 586,
+        "name": "rpc.statd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 658,
+        "name": "upstart-socket-",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 808,
+        "name": "rpciod",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 809,
+        "name": "smbd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 811,
+        "name": "nfsiod",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 817,
+        "name": "dbus-daemon",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 836,
+        "name": "rpc.idmapd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 873,
+        "name": "smbd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 906,
+        "name": "dockerd-default",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 908,
+        "name": "nmbd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 909,
+        "name": "smbd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 940,
+        "name": "systemd-logind",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 994,
+        "name": "rsyslogd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 999,
+        "name": "avahi-daemon",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1000,
+        "name": "avahi-daemon",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1027,
+        "name": "docker-containe",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1049,
+        "name": "upstart-file-br",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1119,
+        "name": "getty",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1121,
+        "name": "getty",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1122,
+        "name": "sh",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1123,
+        "name": "ruby",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1130,
+        "name": "getty",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1132,
+        "name": "getty",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1133,
+        "name": "sh",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1134,
+        "name": "ruby",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1137,
+        "name": "getty",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1141,
+        "name": "sh",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1142,
+        "name": "sudo",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1143,
+        "name": "kauditd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1146,
+        "name": "start.sh",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1203,
+        "name": "mysqld",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1210,
+        "name": "cron",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1211,
+        "name": "nodejs",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1212,
+        "name": "nodejs",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1213,
+        "name": "clear_chat.sh",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1222,
+        "name": "irqbalance",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1242,
+        "name": "dirmngr",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1281,
+        "name": "cups-browsed",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1314,
+        "name": "proftpd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1336,
+        "name": "ircd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1473,
+        "name": "ruby2.3",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1486,
+        "name": "docker-containe",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1506,
+        "name": "bash",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1753,
+        "name": "wrapper-linux-x",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1769,
+        "name": "java",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1840,
+        "name": "apache2",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1841,
+        "name": "apache2",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1844,
+        "name": "apache2",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1845,
+        "name": "apache2",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1846,
+        "name": "apache2",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1847,
+        "name": "apache2",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1848,
+        "name": "apache2",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1929,
+        "name": "apache2",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1932,
+        "name": "login",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1981,
+        "name": "apache2",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 1982,
+        "name": "apache2",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2258,
+        "name": "dhclient",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2569,
+        "name": "sshd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2570,
+        "name": "collector.sh",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2575,
+        "name": "collector.sh",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2577,
+        "name": "tee",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2632,
+        "name": "collector.sh",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2633,
+        "name": "timeout",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2634,
+        "name": "tr",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2635,
+        "name": "sed",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2636,
+        "name": "awk",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2637,
+        "name": "ps",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2663,
+        "name": "cupsd",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 2703,
+        "name": "bash",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 3586,
+        "name": "kworker/0:0",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 3767,
+        "name": "kworker/1:0",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 4008,
+        "name": "sleep",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 4240,
+        "name": "kworker/u4:1",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 5098,
+        "name": "kworker/0:2",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 6496,
+        "name": "kworker/u4:0",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 6504,
+        "name": "sudo",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 6505,
+        "name": "su",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 6506,
+        "name": "bash",
+        "status": null,
+        "path": null
+      },
+      {
+        "pid": 6516,
+        "name": "kworker/1:2",
+        "status": null,
+        "path": null
+      }
+    ],
+    "installed_packages": [
+      {
+        "name": "Desired=Unknown/Install/Remove/Purge/Hold",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "||/ Name                                Version                             Architecture Description",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "+++-===================================-===================================-============-===============================================================================",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  accountsservice                     0.6.35-0ubuntu7                     amd64        query and manipulate user account information",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  acl                                 2.2.52-1                            amd64        Access control list utilities",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  adduser                             3.113+nmu3ubuntu3                   all          add and remove users and groups",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  apache2                             2.4.7-1ubuntu4.22                   amd64        Apache HTTP Server",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  apache2-bin                         2.4.7-1ubuntu4.22                   amd64        Apache HTTP Server (binary files and modules)",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  apache2-data                        2.4.7-1ubuntu4.22                   all          Apache HTTP Server (common files)",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  apache2-dev                         2.4.7-1ubuntu4.22                   amd64        Apache HTTP Server (development headers)",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  apparmor                            2.8.95~2430-0ubuntu5                amd64        User-space parser utility for AppArmor",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  apt                                 1.0.1ubuntu2                        amd64        commandline package manager",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  apt-transport-https                 1.0.1ubuntu2                        amd64        https download transport for APT",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  apt-utils                           1.0.1ubuntu2                        amd64        package management related utility programs",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  apt-xapian-index                    0.45ubuntu4                         all          maintenance and search tools for a Xapian index of Debian packages",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  aptitude                            0.6.8.2-1ubuntu4                    amd64        terminal-based package manager",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  aptitude-common                     0.6.8.2-1ubuntu4                    all          architecture indepedent files for the aptitude package manager",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  attr                                1:2.4.47-1ubuntu1                   amd64        Utilities for manipulating filesystem extended attributes",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  aufs-tools                          1:3.2+20130722-1.1                  amd64        Tools to manage aufs filesystems",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  autotools-dev                       20130810.1                          all          Update infrastructure for config.{guess,sub} files",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  avahi-daemon                        0.6.31-4ubuntu1.3                   amd64        Avahi mDNS/DNS-SD daemon",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  base-files                          7.2ubuntu5                          amd64        Debian base system miscellaneous files",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  base-passwd                         3.5.33                              amd64        Debian base system master password and group files",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  bash                                4.3-6ubuntu1                        amd64        GNU Bourne Again SHell",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  bash-completion                     1:2.1-4                             all          programmable completion for the bash shell",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  bc                                  1.06.95-8ubuntu1                    amd64        GNU bc arbitrary precision calculator language",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  bind9-host                          1:9.9.5.dfsg-3                      amd64        Version of 'host' bundled with BIND 9.X",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  binutils                            2.24-5ubuntu14.2                    amd64        GNU assembler, linker and binary utilities",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  biosdevname                         0.4.1-0ubuntu6                      amd64        apply BIOS-given names to network devices",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  bsdmainutils                        9.0.5ubuntu1                        amd64        collection of more utilities from FreeBSD",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  bsdutils                            1:2.20.1-5.1ubuntu20                amd64        Basic utilities from 4.4BSD-Lite",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  build-essential                     11.6ubuntu6                         amd64        Informational list of build-essential packages",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  bundler                             1.3.5-2ubuntu1                      all          Manage Ruby application dependencies",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  busybox-initramfs                   1:1.21.0-1ubuntu1                   amd64        Standalone shell setup for initramfs",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  busybox-static                      1:1.21.0-1ubuntu1                   amd64        Standalone rescue shell with tons of builtin utilities",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  bzip2                               1.0.6-5                             amd64        high-quality block-sorting file compressor - utilities",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  ca-certificates                     20170717~14.04.2                    all          Common CA certificates",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  ca-certificates-java                20130815ubuntu1                     all          Common CA certificates (JKS keystore)",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cgroup-lite                         1.9                                 all          Light-weight package to set up cgroups at system boot",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  chef                                13.8.5-1                            amd64        The full stack of chef",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  colord                              1.0.6-1                             amd64        system service to manage device colour profiles -- system daemon",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  comerr-dev                          2.1-1.42.9-3ubuntu1.3               amd64        common error description library - headers and static libraries",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  command-not-found                   0.3ubuntu12                         all          Suggest installation of packages in interactive bash sessions",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  command-not-found-data              0.3ubuntu12                         amd64        Set of data files for command-not-found.",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  console-setup                       1.70ubuntu8                         all          console font and keymap setup program",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  coreutils                           8.21-1ubuntu5                       amd64        GNU core utilities",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cpio                                2.11+dfsg-1ubuntu1                  amd64        GNU cpio -- a program to manage archives of files",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cpp                                 4:4.8.2-1ubuntu6                    amd64        GNU C preprocessor (cpp)",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cpp-4.8                             4.8.4-2ubuntu1~14.04.4              amd64        GNU C preprocessor",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  crda                                1.1.2-1ubuntu2                      amd64        wireless Central Regulatory Domain Agent",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cron                                3.0pl1-124ubuntu2                   amd64        process scheduling daemon",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cryptsetup                          2:1.6.1-1ubuntu1                    amd64        disk encryption support - startup scripts",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cryptsetup-bin                      2:1.6.1-1ubuntu1                    amd64        disk encryption support - command line tools",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cups                                1.7.2-0ubuntu1.11                   amd64        Common UNIX Printing System(tm) - PPD/driver support, web interface",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cups-browsed                        1.0.52-0ubuntu1.8                   amd64        OpenPrinting CUPS Filters - cups-browsed",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cups-client                         1.7.2-0ubuntu1.11                   amd64        Common UNIX Printing System(tm) - client programs (SysV)",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cups-common                         1.7.2-0ubuntu1.11                   all          Common UNIX Printing System(tm) - common files",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cups-core-drivers                   1.7.2-0ubuntu1.11                   amd64        Common UNIX Printing System(tm) - PPD-less printing",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cups-daemon                         1.7.2-0ubuntu1.11                   amd64        Common UNIX Printing System(tm) - daemon",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cups-filters                        1.0.52-0ubuntu1.8                   amd64        OpenPrinting CUPS Filters - Main Package",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cups-filters-core-drivers           1.0.52-0ubuntu1.8                   amd64        OpenPrinting CUPS Filters - PPD-less printing",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cups-ppdc                           1.7.2-0ubuntu1.11                   amd64        Common UNIX Printing System(tm) - PPD manipulation utilities",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  cups-server-common                  1.7.2-0ubuntu1.11                   all          Common UNIX Printing System(tm) - server common files",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  curl                                7.35.0-1ubuntu2.20                  amd64        command line tool for transferring data with URL syntax",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dash                                0.5.7-4ubuntu1                      amd64        POSIX-compliant shell",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dbus                                1.6.18-0ubuntu4                     amd64        simple interprocess messaging system (daemon and utilities)",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dconf-gsettings-backend:amd64       0.20.0-1                            amd64        simple configuration storage system - GSettings back-end",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dconf-service                       0.20.0-1                            amd64        simple configuration storage system - D-Bus service",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  debconf                             1.5.51ubuntu2                       all          Debian configuration management system",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  debconf-i18n                        1.5.51ubuntu2                       all          full internationalization support for debconf",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  debhelper                           9.20131227ubuntu1                   all          helper programs for debian/rules",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  debianutils                         4.4                                 amd64        Miscellaneous utilities specific to Debian",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dh-apparmor                         2.10.95-0ubuntu2.6~14.04.4          all          AppArmor debhelper routines",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dh-python                           1.20140128-1ubuntu8                 all          Debian helper tools for packaging Python libraries and applications",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  diffutils                           1:3.3-1                             amd64        File comparison utilities",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dirmngr                             1.1.1-1.1                           amd64        server for managing certificate revocation lists",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dkms                                2.2.0.3-1.1ubuntu5.14.04.10         all          Dynamic Kernel Module Support Framework",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dmidecode                           2.12-2                              amd64        SMBIOS/DMI table decoder",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dmsetup                             2:1.02.77-6ubuntu2                  amd64        Linux Kernel Device Mapper userspace library",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dnsutils                            1:9.9.5.dfsg-3                      amd64        Clients provided with BIND",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  docker-ce                           18.06.1~ce~3-0~ubuntu               amd64        Docker: the open-source application container engine",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dosfstools                          3.0.26-1                            amd64        utilities for making and checking MS-DOS FAT filesystems",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dpkg                                1.17.5ubuntu5                       amd64        Debian package management system",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  dpkg-dev                            1.17.5ubuntu5.8                     all          Debian package development tools",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  e2fslibs:amd64                      1.42.9-3ubuntu1                     amd64        ext2/ext3/ext4 file system libraries",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  e2fsprogs                           1.42.9-3ubuntu1                     amd64        ext2/ext3/ext4 file system utilities",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  ed                                  1.9-2                               amd64        classic UNIX line editor",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  eject                               2.1.5+deb1+cvs20081104-13.1         amd64        ejects CDs and operates CD-Changers under Linux",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  ethtool                             1:3.13-1                            amd64        display or change Ethernet device settings",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  fakeroot                            1.20-3ubuntu2                       amd64        tool for simulating superuser privileges",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  file                                1:5.14-2ubuntu3                     amd64        Determines file type using \"magic\" numbers",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  findutils                           4.4.2-7                             amd64        utilities for finding files--find, xargs",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  fontconfig                          2.11.0-0ubuntu4.2                   amd64        generic font configuration library - support binaries",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  fontconfig-config                   2.11.0-0ubuntu4.2                   all          generic font configuration library - configuration",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  fonts-dejavu-core                   2.34-1ubuntu1                       all          Vera font family derivate with additional characters",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  fonts-dejavu-extra                  2.34-1ubuntu1                       all          Vera font family derivate with additional characters (extra variants)",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  freetds-common                      0.91-5                              all          configuration files for FreeTDS SQL client libraries",
+        "version": null,
+        "source": null
+      },
+      {
+        "name": "ii  freetds-dev                         0.91-5                              amd64        MS SQL and Sybase client library (static libs and headers)",
+        "version": null,
+        "source": null
+      }
+    ],
+    "firewall_status": null,
+    "disk_partitions": [],
+    "network_interfaces": [],
+    "users": [],
+    "timestamp": "2025-04-02T14:26:42.745129",
+    "tags": [],
+    "source": "autoagent",
+    "uptime": null,
+    "cpu_usage": null,
+    "memory_usage": null,
+    "disk_usage": null,
+    "java_version": null,
+    "python_packages": null,
+    "docker_images": [],
+    "mitre_matches": [],
+    "cpu_info": null,
+    "memory_info": null,
+    "system_logs": null,
+    "sudoers": [],
+    "crontab": [],
+    "startup_services": [],
+    "kernel_security": [],
+    "kernel_upgrades": [],
+    "cve_patches": null,
+    "logs": null
+  }
+]
