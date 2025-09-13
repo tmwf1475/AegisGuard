@@ -163,28 +163,6 @@ Mitigation measures:
 
 The vulnerability report has been saved to /home/st335/CTIAgent/autoagent_test1/data/vulnerability_report.json
 
-Patch script successfully generated!
-
-Here is the output of the Bash script:
-```bash
-#!/bin/bash
-
-# Check if the patch is already installed to avoid redundant updates
-if [ -f /etc/patch-installed ]; then
-  echo "Patch already installed, no update needed."
-  exit 0
-fi
-
-# Install necessary updates using apt-get install or dpkg
-sudo apt-get install python3.5.1:
-```python
-pip install --upgrade pip to ensure that you have the latest OpenSSH, Apache Struts and LibreOffice.
-
-# Disable insecure services such as avahi-daemon
-
-# Automatically patching script in your system.
-```
-
 # Output:
 
 The remediation script has been saved to /home/st335/CTIAgent/autoagent_test1/data/fix_solution.sh
