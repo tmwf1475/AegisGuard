@@ -1,125 +1,203 @@
-# Risk Classification Prompt
+# Risk Classification Prompt (Revised, Reproducible, No-Remediation)
 
-This prompt is designed to assign a **risk level (L0–L4)** to vulnerabilities that have already been detected.  
-It leverages **retrieved vulnerability knowledge (RAG)** such as CVSS score, affected software versions, exploitability reports, and vendor advisories.  
-The structured output is intended for downstream modules (e.g., patch generation, statistical reporting).
+This prompt defines how the LLM should **assign a five-level risk classification (L0–L4)** to vulnerabilities already detected by the system.
+It consumes **CVE metadata** (from NVD, vendor advisories, RAG chunks, or detection results) and outputs a **structured JSON object** with rationale, severity justification, and confidence.
 
-## Background
+> **Scope**: Risk scoring and rationale only.
+> **Out of scope**: Remediation, patching, or mitigation suggestions.
 
-In our pipeline:
-- **Input**: Detected vulnerabilities (from detection stage), enriched with **RAG-retrieved metadata** including:
-  - CVSS base score
-  - Exploitability status (public exploit, PoC, or active attacks in the wild)
-  - Impact details (confidentiality, integrity, availability)
-  - Affected products and versions
-  - Vendor advisory references
-- **Task**: Use risk classification guidelines (L0–L4) to assign a severity level.  
-- **Output**: JSON object per vulnerability, containing `cve_id`, `risk_level`, `reason`, and `next_action`.
+## 1) Inputs
 
+### Expected fields per vulnerability
 
-## Risk Level Guidelines (Detailed)
-
-The classification combines **CVSS-based thresholds** with **RAG evidence**:
-
-- **L0 (No Impact)**  
-  - Vulnerability does not apply to the given system (false positive).  
-  - CVSS score irrelevant, system mismatch confirmed by RAG.  
-  - Example: Windows-only CVE reported on Linux host.  
-
-- **L1 (Low Risk)**  
-  - CVSS ≤ 3.9.  
-  - Limited scope or local-only issue with negligible security consequences.  
-  - No known public exploit or active abuse.  
-  - Example: Misconfiguration advisory, informational findings.  
-
-- **L2 (Medium Risk)**  
-  - CVSS 4.0–6.9.  
-  - Potential impact on confidentiality/integrity/availability, but requires uncommon conditions (special user permissions, non-default settings).  
-  - Exploitability uncertain or requires advanced skill.  
-  - Example: Vulnerability with limited exploit surface, no public PoC.  
-
-- **L3 (High Risk)**  
-  - CVSS 7.0–8.9.  
-  - High potential impact or active exploitation observed in RAG sources.  
-  - Exploit available but not yet widespread, or requires specific services exposed.  
-  - Example: SMB vulnerability with known malware campaigns, but mitigated by firewall in default setups.  
-
-- **L4 (Critical Risk)**  
-  - CVSS ≥ 9.0.  
-  - Remote Code Execution (RCE), Privilege Escalation (PE), or Wormable exploits with public PoCs.  
-  - RAG confirms active exploitation in the wild.  
-  - Requires urgent patching and prioritized remediation.  
-  - Example: Dirty COW (PE), EternalBlue (RCE).  
-
-
-## System Prompt
-
-You are a vulnerability risk classifier.  
-
-Your responsibilities:
-1. Review the vulnerability’s metadata, including CVSS score, exploitability, impact, and affected versions.  
-2. Use **RAG knowledge** (advisories, CVSS metrics, exploit status) to justify the classification.  
-3. Map the vulnerability to one of the L0–L4 categories according to the guidelines above.  
-4. Provide a **reason** that explicitly cites the evidence (e.g., CVSS score, exploitability).  
-5. Suggest the **next_action** such as `"proceed_to_patch"`, `"monitor"`, `"ignore"`, or `"manual_review"`.  
-6. Always output **valid JSON**.
-
-
-## User Prompt Example
-
-Detected Vulnerability:
+```json
+{
+  "cve_id": "CVE-2016-5195",
+  "description": "Dirty COW: privilege escalation in Linux kernel before 4.8.3",
+  "cvss": 9.8,
+  "cvss_vector": "AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+  "exploit_status": "Active exploitation reported",
+  "impact": "Privilege Escalation",
+  "exploitability": "Public PoC available",
+  "affected_scope": ["Linux kernel < 4.8.3"],
+  "context_match": {
+    "os": "Ubuntu 14.04",
+    "kernel": "3.13.0-100-generic",
+    "services": []
+  }
+}
 ```
 
-CVE ID: CVE-2016-5195
-Description: Dirty COW – Privilege escalation in Linux kernel < 4.8.3
-CVSS Score: 9.8
-Exploitability: Public PoC available; reported active exploitation
-Impact: Full compromise of system integrity (root privilege escalation)
+## 2) Output (Strict JSON Schema)
 
-````
-
-
-## Expected Output
+The model must return **one JSON object per vulnerability**, containing:
 
 ```json
 {
   "cve_id": "CVE-2016-5195",
   "risk_level": "L4",
-  "reason": "CVSS 9.8 with public PoC and active exploitation; affects Linux kernel widely and leads to privilege escalation.",
-  "next_action": "proceed_to_patch"
+  "justification": "Kernel 3.13.0-100 < 4.8.3. CVSS 9.8. Privilege escalation with public exploit and active in-the-wild reports. High systemic impact.",
+  "signals": {
+    "cvss": 9.8,
+    "impact": "Privilege Escalation",
+    "exploit_status": "Active exploitation reported",
+    "exploitability": "Public PoC available"
+  },
+  "confidence": 0.95,
+  "provenance": {
+    "sources": ["NVD", "Vendor Advisory"],
+    "doc_ids": ["nvd-2016-5195"]
+  }
 }
-````
-
-
-## Additional Example
-
-Detected Vulnerability:
-
-```
-CVE ID: CVE-2017-0144
-Description: EternalBlue SMB vulnerability in Windows
-CVSS Score: 8.5
-Exploitability: Exploit available, widespread abuse by WannaCry ransomware
-Impact: Remote Code Execution via SMB service
 ```
 
-Expected Output:
+## 3) Risk Level Definitions (L0–L4)
+
+* **L0 – No Impact**
+  • Vulnerability does not apply, or system not in affected scope.
+  • Example: Windows-only CVE on a Linux host.
+
+* **L1 – Low**
+  • Minor misconfigurations or low-severity bugs.
+  • No known exploit, CVSS < 4.0, minimal security implications.
+
+* **L2 – Medium**
+  • Vulnerabilities with some impact but limited exploitability.
+  • CVSS 4.0–6.9, no widespread exploitation.
+  • Example: Information disclosure without direct privilege escalation.
+
+* **L3 – High**
+  • Severe vulnerabilities (CVSS 7.0–8.9).
+  • Exploits exist or are likely; significant confidentiality/integrity/availability risk.
+  • Example: Path traversal or denial-of-service with active PoC.
+
+* **L4 – Critical**
+  • CVSS ≥ 9.0 or Remote Code Execution/Privilege Escalation with public exploit.
+  • Actively exploited zero-day or wormable vulnerability.
+  • Example: Dirty COW (CVE-2016-5195), EternalBlue (CVE-2017-0144).
+
+## 4) System Prompt (Copy-Paste)
+
+Use this as the **system message** when prompting the LLM:
+
+```
+You are a vulnerability risk assessment agent. 
+Your task is to assign a risk level (L0–L4) to each provided vulnerability.
+
+STRICT RULES:
+1) Focus only on risk classification and reasoning. Do NOT provide remediation steps.
+2) Base your decision on CVSS score, exploit status, impact type, exploitability hints,
+   and contextual signals (system match, affected scope).
+3) Return a JSON object per vulnerability with:
+   - cve_id
+   - risk_level (L0–L4)
+   - justification (≤ 240 words, evidence-based)
+   - signals {cvss, impact, exploit_status, exploitability}
+   - confidence (0–1)
+   - provenance {sources, doc_ids}
+4) Always be deterministic: do not invent CVSS scores or exploit status if not provided.
+5) If critical input is missing, assign "risk_level": "L0" with justification = "insufficient evidence".
+6) Output must be a JSON array of objects; no additional prose.
+```
+
+## 5) User Prompt Template
+
+Use this as the **user message**:
+
+```
+VULNERABILITY METADATA
+----------------------
+{cve_metadata_json}
+
+TASK
+----
+For each vulnerability:
+- Assign a risk_level (L0–L4) using the definitions provided.
+- Support the classification with a short justification (≤ 240 words).
+- Fill in signals {cvss, impact, exploit_status, exploitability}.
+- Provide a confidence value (0–1).
+- Include provenance {sources, doc_ids} from the input.
+
+Return only a JSON array.
+```
+
+## 6) Few-Shot Examples
+
+### Example A: Privilege Escalation (Dirty COW)
 
 ```json
-{
-  "cve_id": "CVE-2017-0144",
-  "risk_level": "L3",
-  "reason": "CVSS 8.5 and widely abused in ransomware campaigns; however, requires SMB service exposure.",
-  "next_action": "monitor_and_patch"
-}
+[
+  {
+    "cve_id": "CVE-2016-5195",
+    "risk_level": "L4",
+    "justification": "Linux kernel < 4.8.3 is affected. CVSS 9.8. Exploitation confirmed in the wild. Leads to privilege escalation with root access. Matches system context (Ubuntu 14.04, kernel 3.13.0-100).",
+    "signals": {
+      "cvss": 9.8,
+      "impact": "Privilege Escalation",
+      "exploit_status": "Active exploitation reported",
+      "exploitability": "Public PoC available"
+    },
+    "confidence": 0.95,
+    "provenance": {
+      "sources": ["NVD", "Vendor Advisory"],
+      "doc_ids": ["nvd-2016-5195"]
+    }
+  }
+]
 ```
 
----
+### Example B: Information Disclosure (Non-critical)
 
-## Notes
+```json
+[
+  {
+    "cve_id": "CVE-2020-XXXX",
+    "risk_level": "L2",
+    "justification": "OpenSSL version < 1.0.2 leaks timing information. CVSS 5.5. No known active exploitation. Limited impact (information disclosure only).",
+    "signals": {
+      "cvss": 5.5,
+      "impact": "Information Disclosure",
+      "exploit_status": "No public reports",
+      "exploitability": "No known exploit"
+    },
+    "confidence": 0.8,
+    "provenance": {
+      "sources": ["NVD"],
+      "doc_ids": ["nvd-2020-xxxx"]
+    }
+  }
+]
+```
 
-* **CVSS as baseline**: Thresholds provide the starting point for classification.
-* **RAG as evidence**: Exploit availability, advisories, and observed attack data can raise or lower the assigned level.
-* **Consistency**: Always include `cve_id`, `risk_level`, `reason`, and `next_action` in the JSON.
-* **Downstream use**: The output feeds directly into reporting, patch recommendation, and risk dashboard modules.
+### Example C: OS Mismatch (Non-applicable)
+
+```json
+[
+  {
+    "cve_id": "CVE-2017-0144",
+    "risk_level": "L0",
+    "justification": "CVE applies only to Windows SMB. System is Ubuntu Linux. Not exploitable in this context.",
+    "signals": {
+      "cvss": 8.5,
+      "impact": "RCE",
+      "exploit_status": "Exploit available",
+      "exploitability": "Wormable"
+    },
+    "confidence": 0.99,
+    "provenance": {
+      "sources": ["MSRC"],
+      "doc_ids": ["msrc-2017-0144"]
+    }
+  }
+]
+```
+
+## 7) Guardrails & Determinism
+
+* **No remediation**: Only classification and reasoning.
+* **Context awareness**: If the system context excludes applicability → downgrade to L0.
+* **Evidence-first**: Use CVSS, exploit status, and impact as primary drivers.
+* **Stable ordering**: Sort output by `cve_id` ascending.
+* **Concise justification**: ≤ 240 words, focused on decisive evidence.
+* **Confidence**: Reflect certainty of classification (not just CVSS confidence).
 
