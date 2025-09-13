@@ -1,0 +1,14 @@
+{
+  "os": "Ubuntu",
+  "version": "16.04",
+  "kernel": "4.4.0-93-generic",
+  "architecture": "x86_64",
+  "installed_packages": [
+    { "name": "apache2", "version": "2.4.20" },
+    { "name": "openssl", "version": "1.0.2g" },
+    { "name": "openssh-server", "version": "7.2p2" }
+  ],
+  "running_services": ["ssh", "apache2"],
+  "open_ports": ["22/tcp", "80/tcp"],
+  "docker": { "installed": false }
+}
