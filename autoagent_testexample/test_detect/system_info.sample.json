@@ -1,14 +1,34 @@
 {
   "os": "Ubuntu",
-  "version": "16.04",
+  "version": "16.04.7 LTS",
   "kernel": "4.4.0-93-generic",
   "architecture": "x86_64",
+  "hostname": "demo-host",
+  "ip_addresses": ["192.168.1.10"],
+  "cpu_cores": 4,
+  "memory_gb": 8,
+  "disk_usage_pct_root": 72,
   "installed_packages": [
     { "name": "apache2", "version": "2.4.20" },
     { "name": "openssl", "version": "1.0.2g" },
-    { "name": "openssh-server", "version": "7.2p2" }
+    { "name": "openssh-server", "version": "7.2p2" },
+    { "name": "mysql-server", "version": "5.7.12" },
+    { "name": "python3", "version": "3.5.2" },
+    { "name": "samba", "version": "4.3.11" },
+    { "name": "php7.0", "version": "7.0.8" }
   ],
-  "running_services": ["ssh", "apache2"],
-  "open_ports": ["22/tcp", "80/tcp"],
-  "docker": { "installed": false }
+  "running_services": ["ssh", "apache2", "mysql", "smbd"],
+  "open_ports": ["22/tcp", "80/tcp", "443/tcp", "3306/tcp"],
+  "firewall_status": "ufw inactive",
+  "docker": {
+    "installed": true,
+    "images": ["ubuntu:16.04", "mysql:5.7"],
+    "containers": ["web_app", "db_server"]
+  },
+  "recent_logs": {
+    "syslog_tail": [
+      "Aug 14 10:22:01 demo CRON[1234]: (root) CMD (update-motd)",
+      "Aug 14 10:25:47 demo sshd[1321]: Accepted password for user1 from 192.168.1.25 port 51432 ssh2"
+    ]
+  }
 }
