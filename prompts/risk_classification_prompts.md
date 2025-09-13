@@ -1,4 +1,4 @@
-# Risk Classification Prompt (Revised, Reproducible, No-Remediation)
+# Risk Classification Prompt 
 
 This prompt defines how the LLM should **assign a five-level risk classification (L0–L4)** to vulnerabilities already detected by the system.
 It consumes **CVE metadata** (from NVD, vendor advisories, RAG chunks, or detection results) and outputs a **structured JSON object** with rationale, severity justification, and confidence.
