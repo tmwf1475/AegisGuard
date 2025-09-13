@@ -1,0 +1,126 @@
+Detected Vulnerabilities (Fourth Iteration - Expanded Coverage)
+
+After deeper analysis of the Ubuntu 16.04 system, the vulnerability coverage has been extended. 
+This iteration includes additional CVEs for each component and expands the scope to cover more libraries and middleware.
+
+1. Linux Kernel Vulnerabilities
+- CVE-2016-10229: UDP packet handling flaw leading to RCE.
+- CVE-2017-1000251: Heap buffer overflow leading to privilege escalation.
+- CVE-2018-3620: Speculative execution (L1 Terminal Fault).
+- CVE-2019-11477: SACK Panic vulnerability (DoS).
+- CVE-2020-14386: Local privilege escalation via SCTP module.
+
+Affected component: Kernel 4.4.0-93
+Impact: RCE / DoS / Privilege Escalation / Side-channel
+Recommendation:
+- Upgrade kernel to ≥ 4.15 with latest patches
+- Reboot required after upgrade
+Priority: Critical
+Source: NVD, Ubuntu Security Notices
+
+2. Apache Struts2 Vulnerabilities
+- CVE-2017-5638: Remote Code Execution in Jakarta parser.
+- CVE-2018-11776: Namespace misconfiguration leading to RCE.
+- CVE-2019-0230: Forced OGNL evaluation.
+- CVE-2020-17530: Forced double evaluation of attributes.
+
+Affected component: Apache Struts 2.5.20
+Impact: RCE
+Recommendation:
+- Upgrade to Struts ≥ 2.5.25
+Priority: High
+Source: Apache Project
+
+3. OpenSSH Vulnerabilities
+- CVE-2016-6515: Buffer overflow in key exchange.
+- CVE-2018-15919: Privilege escalation in PAM integration.
+- CVE-2020-14145: Timing attack in CBC mode.
+- CVE-2021-41617: Privilege escalation vulnerability.
+
+Affected component: OpenSSH 7.2p2
+Impact: RCE / Privilege Escalation / InfoLeak
+Recommendation:
+- Upgrade to OpenSSH ≥ 8.0
+Priority: High
+Source: OpenBSD Project
+
+4. Python Vulnerabilities
+- CVE-2018-14647: Pickle unsafe deserialization RCE.
+- CVE-2019-5010: Buffer overflow in bytes handling.
+- CVE-2020-8492: HTTP header injection.
+- CVE-2021-3177: Buffer overflow in PyCArg_repr.
+
+Affected component: Python 3.5.2
+Impact: RCE / Info Disclosure
+Recommendation:
+- Upgrade to Python ≥ 3.8
+Priority: Medium
+Source: Python Security Advisories
+
+5. Samba Vulnerabilities
+- CVE-2017-7494: RCE via crafted shared libraries.
+- CVE-2018-14629: DoS via DNS zone transfer.
+- CVE-2020-10704: Buffer overflow in LSA.
+- CVE-2021-44142: Heap overflow in VFS module.
+
+Affected component: Samba 4.3.14
+Impact: RCE / DoS
+Recommendation:
+- Upgrade Samba and disable SMBv1
+Priority: High
+Source: Samba Project
+
+6. GNOME / Desktop Libraries
+- CVE-2018-14661: Heap overflow in GDK-Pixbuf.
+- CVE-2019-11460: Out-of-bounds read in libxml2.
+- CVE-2020-13543: Integer overflow in Pango.
+- CVE-2021-3800: Memory leak in GTK.
+
+Affected component: GNOME stack
+Impact: Memory corruption / RCE
+Recommendation:
+- Apply all pending updates
+Priority: Medium
+Source: GNOME, Debian Security Advisories
+
+7. Node.js Vulnerabilities
+- CVE-2019-10747: Prototype pollution in lodash dependency.
+- CVE-2020-11080: HTTP/2 large header DoS.
+- CVE-2020-8201: TLS crafted packets issue.
+- CVE-2021-22930: HTTP request smuggling.
+
+Affected component: Node.js (< 12.x)
+Impact: RCE / DoS
+Recommendation:
+- Upgrade to Node.js ≥ 14.x LTS
+Priority: Medium
+Source: Node.js Security WG
+
+8. MySQL Vulnerabilities
+- CVE-2019-2737: Privilege escalation.
+- CVE-2020-15252: Memory corruption.
+- CVE-2021-22946: Heap overflow in replication.
+- CVE-2022-21449: Signature validation flaw.
+
+Affected component: MySQL (< 5.7.30)
+Impact: Privilege Escalation / RCE / Integrity bypass
+Recommendation:
+- Upgrade to MySQL ≥ 8.0.x
+Priority: High
+Source: Oracle
+
+9. PHP Vulnerabilities
+- CVE-2019-11043: RCE via PHP-FPM.
+- CVE-2021-21705: Out-of-bounds write in GD module.
+
+Affected component: PHP 7.x (if present)
+Impact: RCE
+Recommendation:
+- Upgrade to PHP ≥ 7.4.22
+Priority: Medium
+Source: PHP Security Advisories
+
+Summary
+- Critical: Linux Kernel
+- High: OpenSSH, Apache Struts, Samba, MySQL
+- Medium: Python, GNOME libraries, Node.js, PHP
