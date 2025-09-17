@@ -1,1 +1,0 @@
-default[:proftpd][:download_url] = 'ftp://ftp.proftpd.org/distrib/source'

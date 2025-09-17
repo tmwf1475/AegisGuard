@@ -1,0 +1,38 @@
+[
+  {
+    "cve_id": "CVE-2016-5195",
+    "match": false,
+    "reason": "OS mismatch",
+    "risk_hint": "L0"
+  },
+  {
+    "cve_id": "CVE-2021-41773",
+    "match": false,
+    "reason": "OS mismatch",
+    "risk_hint": "L0"
+  },
+  {
+    "cve_id": "CVE-2016-6515",
+    "match": false,
+    "reason": "OS mismatch",
+    "risk_hint": "L0"
+  },
+  {
+    "cve_id": "CVE-2016-6662",
+    "match": false,
+    "reason": "OS mismatch",
+    "risk_hint": "L0"
+  },
+  {
+    "cve_id": "CVE-2017-7494",
+    "match": false,
+    "reason": "OS mismatch",
+    "risk_hint": "L0"
+  },
+  {
+    "cve_id": "CVE-2019-11043",
+    "match": false,
+    "reason": "OS mismatch",
+    "risk_hint": "L0"
+  }
+]

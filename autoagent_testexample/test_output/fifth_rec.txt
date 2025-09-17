@@ -1,0 +1,77 @@
+Detected Vulnerabilities (Fifth Iteration - Comprehensive Expansion)
+
+This iteration aggregates an even broader range of vulnerabilities across the stack, 
+including databases, runtimes, desktop libraries, and middleware. 
+The goal is to illustrate a maximal coverage snapshot for the given environment.
+
+1. Linux Kernel
+- CVE-2016-10229, CVE-2017-1000251, CVE-2018-3620, CVE-2019-11477, CVE-2020-14386, CVE-2021-3493, CVE-2022-0847 ("Dirty Pipe").
+
+Impact: RCE / DoS / Privilege Escalation
+Priority: Critical
+
+2. Apache Struts2
+- CVE-2017-5638, CVE-2018-11776, CVE-2019-0230, CVE-2020-17530, CVE-2021-31805.
+
+Impact: Remote Code Execution
+Priority: High
+
+3. OpenSSH
+- CVE-2016-6515, CVE-2018-15919, CVE-2020-14145, CVE-2021-41617, CVE-2023-28531.
+
+Impact: RCE / Privilege Escalation
+Priority: High
+
+4. Python
+- CVE-2018-14647, CVE-2019-5010, CVE-2020-8492, CVE-2021-3177, CVE-2022-0391.
+
+Impact: RCE / Information Disclosure
+Priority: Medium
+
+5. Samba
+- CVE-2017-7494, CVE-2018-14629, CVE-2020-10704, CVE-2021-44142, CVE-2022-32744.
+
+Impact: RCE / DoS
+Priority: High
+
+6. GNOME / Desktop
+- CVE-2018-14661, CVE-2019-11460, CVE-2020-13543, CVE-2021-3800, CVE-2022-1388.
+
+Impact: Memory corruption / RCE
+Priority: Medium
+
+7. Node.js
+- CVE-2019-10747, CVE-2020-11080, CVE-2020-8201, CVE-2021-22930, CVE-2022-32212.
+
+Impact: RCE / DoS
+Priority: Medium
+
+8. MySQL
+- CVE-2019-2737, CVE-2020-15252, CVE-2021-22946, CVE-2022-21449, CVE-2023-21884.
+
+Impact: Privilege Escalation / RCE
+Priority: High
+
+9. PHP
+- CVE-2019-11043, CVE-2021-21705, CVE-2022-31626.
+
+Impact: RCE
+Priority: Medium
+
+10. OpenSSL
+- CVE-2016-2108, CVE-2018-0734, CVE-2020-1967, CVE-2022-0778, CVE-2022-3602, CVE-2022-3786.
+
+Impact: RCE / DoS / Certificate validation bypass
+Priority: Critical
+
+
+11. PostgreSQL (if present)
+- CVE-2019-10164, CVE-2020-14350, CVE-2021-3677, CVE-2022-1552.
+
+Impact: SQL injection / DoS
+Priority: Medium
+
+Summary
+- Critical: Linux Kernel, OpenSSL
+- High: Struts, OpenSSH, Samba, MySQL
+- Medium: Python, GNOME, Node.js, PHP, PostgreSQL
