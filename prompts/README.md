@@ -1,42 +1,208 @@
-# Prompts
+# AegisGuard Prompt Library
 
-This folder contains **prompt templates** used in the AegisGuard LLM-based vulnerability detection pipeline.
-They illustrate how system information and RAG-retrieved knowledge are structured for the model, and how the model is instructed to respond in a **deterministic, reproducible, and verifiable** way.
+This directory contains the **prompt templates** used across the AegisGuard
+LLM-driven vulnerability detection, summarization, and risk stratification
+pipeline.  
+Each prompt is designed to be **deterministic, reproducible, and aligned with
+the system’s RAG-enhanced semantic reasoning engine**.
 
-## Files
+AegisGuard relies on three categories of prompts:
 
-* **`detection_prompts.md`**
-  Defines how the LLM determines whether a system configuration is affected by candidate CVEs.
+1. **Telemetry Summarization Prompts**  
+2. **Vulnerability-Matching Prompts**  
+3. **Risk-Classification Prompts**
 
-  * **Input**:
+These prompts collectively enable AegisGuard to convert host telemetry into
+actionable vulnerability insights using a fully transparent and verifiable workflow.
 
-    * `system_info.json` (OS, kernel, installed packages, services, ports, optional logs)
-    * `vulnerability_chunks.json` (retrieved CVE metadata such as affected ranges, CVSS, exploitability)
-  * **Output**:
 
-    * A JSON **array** of candidate vulnerabilities with fields for match status, reasoning, applicability signals, preliminary risk hints, and provenance.
+# 1. Telemetry Summarization Prompts 
 
-* **`risk_classification_prompts.md`**
-  Defines how the LLM assigns a **five-level risk score (L0–L4)** to vulnerabilities identified in the detection stage.
+These prompts instruct the LLM to convert raw host telemetry into a
+structured, security-focused summary.
 
-  * **Input**:
+### **Purpose**
+Summarization normalizes heterogeneous system outputs (Linux/Windows/Containers)
+into a consistent semantic representation that downstream detection and
+classification modules can consume.
 
-    * CVE metadata (ID, description, CVSS score/vector, exploitability hints, impact type, provenance)
-  * **Output**:
+### **Input**
+- `RAW_TELEMETRY`  
+  Raw monitoring data (kernel, OS info, processes, packages, services,
+  privilege context, ports, configs, etc.)
 
-    * A JSON **object** per vulnerability containing risk level, justification, supporting signals, confidence, and provenance.
+### **Output**
+A structured JSON object:
 
-## Purpose
+```json
+{
+  "system": "...",
+  "attack_surface": [...],
+  "packages": [...],
+  "privilege_context": [...],
+  "security_observations": [...]
+}
+````
 
-These prompts are designed as **minimal but functional examples** that reviewers and practitioners can reproduce.
-They provide:
+### **Role in Pipeline**
 
-1. **Transparency** – clear instructions on how the LLM is guided.
-2. **Reproducibility** – deterministic input/output formats for evaluation.
-3. **Traceability** – explicit use of provenance fields linking back to RAG sources.
+```
+Raw Telemetry → Summarization Prompt → Structured Security Summary
+```
 
-Together, the detection and risk classification prompts form the core of the pipeline:
 
-* **Detection** decides if a CVE applies.
-* **Risk classification** evaluates its severity (L0–L4) for downstream analysis and reporting.
+# 2. Vulnerability-Matching Prompts 
 
+These prompts govern how the LLM determines whether known vulnerabilities
+(CVEs) apply to the target system.
+
+### **Purpose**
+
+To semantically match system characteristics against retrieved threat
+intelligence (RAG), including:
+
+* CVE descriptions
+* version ranges
+* exploit notes
+* ATT&CK patterns
+* misconfiguration indicators
+
+### **Input**
+
+* `SYSTEM_SUMMARY`
+  Structured telemetry output from the summarization prompt.
+* `CTI_CONTEXT`
+  Top-k FAISS-retrieved CVE and ATT&CK chunks containing relevant knowledge.
+
+### **Output**
+
+A JSON array:
+
+```json
+[
+  {
+    "vulnerability_detected": true,
+    "matched_cves": ["CVE-XXXX-YYYY"],
+    "confidence": 0.0,
+    "evidence": [...],
+    "explanation": "..."
+  }
+]
+```
+
+### **Role in Pipeline**
+
+```
+Structured Summary + RAG Retrieval → Vulnerability-Matching Prompt → Candidate CVEs
+```
+
+# 3. Risk Classification Prompts 
+
+These prompts evaluate each detected vulnerability and assign a
+**five-level risk rating (L0–L4)** based on the AegisGuard rubric.
+
+### **Purpose**
+
+To incorporate operational context, exposure, exploitability, and system
+configuration into a final risk score.
+
+### **Input**
+
+* CVE metadata (CVSS, CWE, impact type, exploit maturity)
+* System context (exposure, privilege pathways, configurations)
+* Detection-stage evidence
+
+### **Output**
+
+A JSON object:
+
+```json
+{
+  "risk_level": "L3",
+  "justification": "...",
+  "signals": [...],
+  "confidence": 0.92,
+  "provenance": [...]
+}
+```
+
+### **Role in Pipeline**
+
+```
+Candidate CVEs → Risk Classification Prompt → L0–L4 Severity Output
+```
+
+# 4. RAG Integration (Applies to All Prompts)
+
+AegisGuard enhances all prompt stages using **retrieval-augmented generation**:
+
+1. **Chunk CTI corpus** (CVE descriptions, malware reports, ATT&CK mappings)
+2. **Embed using LLM-based encoder**
+3. **Build FAISS index**
+4. **Retrieve top-k relevant documents**
+5. **Inject retrieved context into the prompt** before final inference
+
+### RAG Workflow:
+
+```
+Host Telemetry
+   ↓
+Summarization Prompt
+   ↓
+Structured Summary
+   ↓
+FAISS Retrieval (Top-k CTI Chunks)
+   ↓
+Vulnerability-Matching Prompt
+   ↓
+Candidate Vulnerabilities
+   ↓
+Risk-Classification Prompt
+   ↓
+Final L0–L4 Risk Output
+```
+
+# 5. Design Principles
+
+The prompt library adheres to the following principles:
+
+### **Determinism**
+
+Inputs and outputs follow strict schemas to support benchmarking and reproducibility.
+
+### **Traceability**
+
+Every prompt incorporates provenance fields linking outputs back to:
+
+* telemetry evidence
+* CTI retrieval chunks
+* model decisions
+
+### **Modularity**
+
+Each prompt is self-contained and corresponds to one stage in the pipeline.
+
+### **Transparency**
+
+Prompts are intentionally kept readable and auditable for security analysts.
+
+# 6. Files Included
+
+| File                                | Description                                                                 |
+| ----------------------------------- | --------------------------------------------------------------------------- |
+| `telemetry_summarization_prompt.md` | Summarizes raw telemetry into structured OS/service/attack-surface features |
+| `vulnerability_matching_prompt.md`  | Performs CVE applicability reasoning with RAG-injected context              |
+| `risk_classification_prompt.md`     | Assigns L0–L4 severity with justification and contextual reasoning          |
+
+
+# 7. How These Prompts Are Used in Experiments
+
+AegisGuard uses the same prompts across all evaluation scenarios:
+
+* Linux hosts (Ubuntu, Debian, Kali)
+* Windows hosts (Win10, Win2012R2)
+* Containers / microservice testbeds
+* Multi-vulnerability experimental scenarios (Web, CI/CD, Exposure)
+
+This ensures **cross-platform consistency** and stable comparisons across
+detection accuracy, risk classification, and ablation studies.
